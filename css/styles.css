@@ -1,10 +1,210 @@
- /* Style for Headers with different colors */
- h1 { color: red; }
- h2 { color: orange; }
- h3 { color: yellowgreen; }
- h4 { color: green; }
- h5 { color: blue; }
- h6 { color: purple; }
- 
- /* Style for all paragraphs */
- p { color: #555; font-family: Arial, sans-serif; }
+.body_login {
+  font-family: "Reem Kufi Fun", sans-serif; /* نحدد الخط العام */
+  background-color: rgb(255, 236, 214); /* نخلي خلفية الصفحة سوداء */
+  background-image: linear-gradient(#fddbbe, #ffecdf);
+  margin: 0; /* نشيل المارجن الافتراضي */
+  padding: 0; /* نشيل البادنك الافتراضي */
+
+  display: flex; /* نفعل flex */
+  justify-content: center; /* نوسّط افقي */
+  align-items: center; /* نوسّط عمودي */
+
+  min-height: 100vh; /* نخلي البودي ياخذ كل الشاشة */
+}
+
+.login-container {
+  display: flex; /* نخلي العناصر تصف يم بعض */
+
+  align-items: center; /* نوسّط العناصر عمودياً */
+  justify-content: space-between; /* نوزع العناصر */
+
+  width: 700px; /* عرض الكونتينر */
+  min-height: 400px; /* اقل ارتفاع */
+
+  padding: 20px; /* مسافة داخلية */
+
+  background-color: white; /* خلفية بيضة */
+
+  border-radius: 8px; /* تدوير الحواف */
+
+  overflow: hidden; /* اي عنصر يطلع برا ينقص */
+}
+
+.image-container {
+  width: 300px; /* عرض قسم الصورة */
+
+  height: 460px; /* ارتفاع قسم الصورة */
+
+  display: flex; /* نفعل flex */
+
+  justify-content: center; /* نوسّط افقي */
+
+  align-items: center; /* نوسّط عمودي */
+
+  background-image: linear-gradient(#ec7f25, #f09951); /* تدرج برتقالي */
+}
+
+.image {
+  width: 250px; /* عرض الصورة الأصلي */
+  height: 250px; /* ارتفاع الصورة الأصلي */
+  background-image: url("../images/Line.png");
+  /* 🔥 نستخدم contain بدلاً من cover لضمان ظهور الصورة كاملة بدون قطع */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* 🔥 أضفنا الحركة هنا لتعمل في كل مكان */
+  transition: all 4s ease-in-out;
+}
+
+/* 🔥 تأثير الـ hover عند وضع الماوس على الصورة */
+.image:hover {
+  transform: scale(2.1); /* تكبير الصورة بنسبة 10% بحركة ناعمة جداً */
+  /* أو يمكنك استخدام تقليل العرض والارتفاع مثل فكرتك السابقة: */
+  /* width: 180px; */
+  /* height: 180px; */
+}
+
+.form-container {
+  display: flex; /* نفعل flex */
+
+  flex-direction: column;
+  /* نخلي العناصر تحت بعض */
+
+  justify-content: center;
+  /* نوسّط عمودياً */
+
+  align-items: center;
+  /* نوسّط افقياً */
+
+  gap: 20px;
+  /* مسافة بين العناصر */
+
+  width: 300px;
+  /* عرض الفورم */
+}
+
+.title {
+  margin: 0;
+  /* نشيل المارجن الافتراضي */
+
+  font-size: 28px;
+  /* حجم الخط */
+
+  color: black;
+  /* لون الخط */
+
+  text-align: center;
+  /* النص بالنص */
+}
+
+.title-secondary {
+  margin: 0;
+  /* نشيل المارجن */
+
+  font-size: 18px;
+  /* حجم الخط */
+
+  color: #b5cfdb;
+  /* اللون البرتقالي */
+
+  text-align: center;
+  /* النص بالنص */
+}
+
+.input-field {
+  width: 100%;
+  /* ياخذ كل العرض */
+
+  padding: 12px;
+  /* مسافة داخلية */
+
+  border: 1px solid #fcbc88;
+  /* لون البوردر */
+
+  border-radius: 6px;
+  /* تدوير الحواف */
+
+  outline: none;
+  /* نشيل الخط الأزرك */
+
+  font-family: inherit;
+  /* ياخذ نفس خط الصفحة */
+}
+
+.button-primary {
+  width: 100%;
+  /* ياخذ كل العرض */
+
+  padding: 12px;
+  /* مسافة داخلية */
+
+  border: none;
+  /* نشيل البوردر */
+
+  border-radius: 6px;
+  /* تدوير الحواف */
+
+  background-image: linear-gradient(#ec7f25, #ffaa65);
+  /* لون الزر */
+
+  color: rgb(0, 0, 0);
+  /* لون النص */
+
+  cursor: pointer;
+  /* يخلي شكل الماوس يد */
+
+  font-family: inherit;
+  /* نفس الخط */
+
+  font-size: 16px;
+  /* حجم الخط */
+
+  /* حركة ناعمة */
+}
+
+.width-demo-button {
+  /* نضيف كلاس خاص لزر الارسال عشان نطبق عليه حركة العرض * / */
+  transition-property: width; /* نحدد انو الحركة بس على العرض */
+  transition: 3s; /* مدة الحركة 0.3 ثانية */
+  background-color: #111111; /* يتغير لون الزر */
+}
+
+.width-demo-button:hover {
+  /* لما يوقف عليه * / */
+  width: 50%; /* لما يوقف عليه ينقص  العرض */
+}
+
+@media screen and (max-width: 600px) {
+  .login-container {
+    flex-direction: column;
+    /* نخلي العناصر تحت بعض بالموبايل */
+
+    width: 100%;
+    /* عرض مرن */
+
+    gap: 20px;
+    /* مسافة بين العناصر */
+  }
+
+  .image-container {
+    width: 100%;
+    /* الصورة تاخذ العرض الكامل */
+
+    height: 250px;
+    /* نقلل الارتفاع */
+  }
+
+  .image {
+    width: 160px;
+    /* نصغر الصورة */
+
+    height: 160px;
+    /* نصغر الصورة */
+  }
+
+  .form-container {
+    width: 100%;
+    /* الفورم ياخذ العرض الكامل */
+  }
+}
